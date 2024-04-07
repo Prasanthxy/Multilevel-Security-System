@@ -21,9 +21,43 @@
 
    By requiring two forms of verification, your system significantly reduces the risk of unauthorized access, making it a valuable tool in any setting where security is a top priority
 
+# Explanation
+
+  The "Multilevel Security System" project is an advanced security solution designed to provide enhanced protection and access control using a combination of technologies and methodologies. Here's a detailed explanation of how the project works, its components, and the technologies it employs:
+
+## Core Components:
+   * I2C EEPROM: A non-volatile memory used for storing the initial user password securely. The I2C (Inter-Integrated Circuit) protocol facilitates communication between the EEPROM and the microcontroller, ensuring that password data is transmitted securely and efficiently.
+
+   * UART GSM Module: A module that allows the system to communicate over mobile networks. It is used to send a randomly generated password to the user's mobile phone as part of the second authentication step. UART (Universal Asynchronous Receiver/Transmitter) is the communication protocol used to interface with the GSM module.
+
+## How It Works:
+### First Level of Security:
+
+* The system prompts the user to enter a password.
+* The entered password is compared with the one stored in the I2C EEPROM.
+* If the password matches, access to the second level of security is granted.
+### Second Level of Security:
+
+* Upon successful verification at the first level, the system generates a random password.
+* This random password is sent to the registered mobile number of the user via the UART GSM module.
+* The user then enters this password into the system.
+* If the entered password matches the randomly generated one, the user is granted access to the system.
+
+# Key Features:
+### Dual-Layer Authentication: 
+   This approach significantly enhances security by requiring two distinct forms of verification before access is granted.
+
+### Secure Password Storage: 
+   Utilizing EEPROM for password storage provides a secure and reliable way to manage user credentials.
+
+### Real-Time Communication: 
+   The use of a GSM module for real-time password delivery adds an extra layer of security, ensuring that only the intended user can gain access at any given time.
+
+### Random Password Generation:
+   By generating a random password that is valid for only one session, the system effectively mitigates the risk of password theft or replay attacks.
+
 # Features
 
- 
 * Dual-layer authentication
 * I2C EEPROM password storage
 * UART GSM communication
@@ -47,40 +81,6 @@
 * Real-time authentication
 * Improved access management
 * Cost-effective security upgrade
-
-# Explanation
-
-  The "Multilevel Security System" project is an advanced security solution designed to provide enhanced protection and access control using a combination of technologies and methodologies. Here's a detailed explanation of how the project works, its components, and the technologies it employs:
-
-## Core Components:
-   * I2C EEPROM: A non-volatile memory used for storing the initial user password securely. The I2C (Inter-Integrated Circuit) protocol facilitates communication between the EEPROM and the microcontroller, ensuring that password data is transmitted securely and efficiently.
-
-   * UART GSM Module: A module that allows the system to communicate over mobile networks. It is used to send a randomly generated password to the user's mobile phone as part of the second authentication step. UART (Universal Asynchronous Receiver/Transmitter) is the communication protocol used to interface with the GSM module.
-
-## How It Works:
-### First Level of Security:
-
-* The system prompts the user to enter a password.
-* The entered password is compared with the one stored in the I2C EEPROM.
-* If the password matches, access to the second level of security is granted.
-### Second Level of Security:
-
-* Upon successful verification at the first level, the system generates a random password.
-* This random password is sent to the registered mobile number of the user via the UART GSM module.
-* The user then enters this password into the system.
-* If the entered password matches the randomly generated one, the user is granted access to the system.
-## Key Features:
-### Dual-Layer Authentication: 
-   This approach significantly enhances security by requiring two distinct forms of verification before access is granted.
-
-### Secure Password Storage: 
-   Utilizing EEPROM for password storage provides a secure and reliable way to manage user credentials.
-
-### Real-Time Communication: 
-   The use of a GSM module for real-time password delivery adds an extra layer of security, ensuring that only the intended user can gain access at any given time.
-
-### Random Password Generation:
-   By generating a random password that is valid for only one session, the system effectively mitigates the risk of password theft or replay attacks.
 
 # 4W's and 1'H
 
